@@ -44,9 +44,23 @@ pip install -r requirements.txt
 python main.py
 ```
 
-**Default login:** `admin` / `admin123`
+### Configure the database connection
 
-MySQL connection defaults (`config.py`): `localhost:3306`, database `service_management`, user `root`, empty password.
+Connection settings live in **`config.py`** — edit these before running if your
+MySQL setup differs from the XAMPP default:
+
+```python
+DB_HOST = "localhost"        # MySQL host
+DB_PORT = 3306               # MySQL port
+DB_NAME = "service_management"
+DB_USER = "root"
+DB_PASSWORD = ""             # empty by default in XAMPP
+```
+
+Alternatively, you can override them via environment variables
+(`DB_HOST`, `DB_PORT`, `DB_NAME`, `DB_USER`, `DB_PASSWORD`) without touching the code.
+
+**Default login:** `admin` / `admin123`
 
 ## Migrate from SQLite
 
